@@ -21,7 +21,8 @@ bool				g_menu_initialized = false;
 ListMenu			g_menu;
 
 
-mem_patch			unlimited_ammo(0x04637E9, { 0x90, 0x90 });
+mem_patch			unlimited_weapon_ammo(0x04637E9, { 0x90, 0x90 });
+mem_patch			unlimited_grenade_ammo(0x00463378, { 0x90, 0x90 });
 
 
 #define SHOW_HIDE				{ "+","-"}
@@ -131,11 +132,13 @@ void on_draw()
 
 	if (g_items.unlimitedAmmo)
 	{
-		unlimited_ammo.patch();
+		unlimited_weapon_ammo.patch();
+		unlimited_grenade_ammo.patch();
 	}
 	else
 	{
-		unlimited_ammo.restore();
+		unlimited_weapon_ammo.restore();
+		unlimited_grenade_ammo.restore();
 	}
 
 	
@@ -155,7 +158,7 @@ DWORD __stdcall start_cheat(LPVOID param)
 		Sleep(100);
 	} while (!g_globals.game_window);
 
-	printf("ac window found 0x%p", g_globals.game_window);
+	printf("ac window found 0x%p\n", g_globals.game_window);
 
 	printf("waiting for opengl32.dll\n");
 
