@@ -1,6 +1,12 @@
 #include <windows.h>
 #include <iostream>
 
+#include "opengl.hpp"
+
+
+FILE*				g_stream = nullptr;
+HANDLE				g_init_thread = nullptr;
+
 DWORD __stdcall start_cheat(LPVOID param)
 {
 	printf("cheat injected!\n");
@@ -14,17 +20,17 @@ DWORD __stdcall start_cheat(LPVOID param)
 		Sleep(100);
 	} while (!opengl32);
 
-	auto wgl_swap_buffers = GetProcAddress(opengl32, "wglSwapBuffers");
-
 	printf("opengl32.dll found @ 0x%p\n", opengl32);
-	printf("wgl_swap_buffers found @ 0x%p\n", wgl_swap_buffers);
-
+	
+	if (!opengl::hook(opengl32))
+	{
+		printf("failed to hook opengl\n");
+		return 1;
+	}
 
 	return 1;
 }
 
-FILE*	g_stream = nullptr;
-HANDLE	g_init_thread = nullptr;
 
 int __stdcall DllMain(HMODULE dll, DWORD reason, LPVOID argument)
 {
@@ -39,6 +45,8 @@ int __stdcall DllMain(HMODULE dll, DWORD reason, LPVOID argument)
 	}
 	else if (reason == DLL_PROCESS_DETACH)
 	{
+		opengl::unhook();
+
 		TerminateThread(g_init_thread, 0);
 
 		printf("unloading dll...\n");

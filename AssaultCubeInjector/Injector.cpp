@@ -113,8 +113,6 @@ int main(int argc, char** argv)
 			return 1;
 		}
 
-		DWORD lerr = GetLastError();
-
 
 		WaitForSingleObject(thread_handle, INFINITE);
 
@@ -136,6 +134,11 @@ int main(int argc, char** argv)
 				(LPVOID)remote_module_base, 
 				0, 
 				nullptr));
+
+			VirtualFreeEx(process_handle, remote_path_mem, 0, MEM_RELEASE);
+			CloseHandle(thread_handle);
+			CloseHandle(process_handle);
+			return 1;
 		}
 		else
 		{
