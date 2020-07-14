@@ -121,7 +121,7 @@ int main(int argc, char** argv)
 
 		if (remote_module_base != 0)
 		{
-			printf("[+] injection succeeded, module loaded @ 0x%p\n", remote_module_base);
+			printf("[+] injection succeeded, module loaded @ 0x%x\n", remote_module_base);
 
 			printf("press enter to unload...\n");
 			getchar();

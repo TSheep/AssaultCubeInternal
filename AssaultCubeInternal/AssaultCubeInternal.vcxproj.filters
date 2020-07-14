@@ -1,10 +1,93 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="opengl.cpp" />
+    <ClCompile Include="hde32.c">
+      <Filter>hde32</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="opengl.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="opengl_render.cpp">
+      <Filter>opengl</Filter>
+    </ClCompile>
+    <ClCompile Include="menu.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="color.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
+    <ClCompile Include="items.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="assault_cube.cpp">
+      <Filter>ac</Filter>
+    </ClCompile>
+    <ClCompile Include="ogl_renderer.cpp">
+      <Filter>menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="opengl.hpp" />
+    <ClInclude Include="hde32.h">
+      <Filter>hde32</Filter>
+    </ClInclude>
+    <ClInclude Include="table32.h">
+      <Filter>hde32</Filter>
+    </ClInclude>
+    <ClInclude Include="opengl.hpp">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="opengl_render.hpp">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="colors.hpp">
+      <Filter>opengl</Filter>
+    </ClInclude>
+    <ClInclude Include="globals.hpp">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="menu.hpp">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="render_base.hpp">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="color.hpp">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="items.hpp">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="assault_cube.hpp">
+      <Filter>ac</Filter>
+    </ClInclude>
+    <ClInclude Include="vec3.hpp">
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="ogl_renderer.hpp">
+      <Filter>menu</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryPatch.hpp">
+      <Filter>main</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="opengl">
+      <UniqueIdentifier>{dfcae430-539a-45ed-87d0-f3ae99dd0aca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="hde32">
+      <UniqueIdentifier>{ab9003ee-d10a-4bea-b6e1-3505ac98936c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="main">
+      <UniqueIdentifier>{9d133c73-5350-4d0b-bca0-ed5657873c85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="menu">
+      <UniqueIdentifier>{033c35b6-94c9-4194-9581-592988490a19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ac">
+      <UniqueIdentifier>{29005373-bbb9-4c12-8db2-41a9a68ae70f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

@@ -145,11 +145,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="assault_cube.cpp" />
+    <ClCompile Include="color.cpp" />
+    <ClCompile Include="items.cpp" />
+    <ClCompile Include="menu.cpp" />
+    <ClCompile Include="opengl_render.cpp" />
+    <ClCompile Include="hde32.c" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="opengl.cpp" />
+    <ClCompile Include="ogl_renderer.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="assault_cube.hpp" />
+    <ClInclude Include="color.hpp" />
+    <ClInclude Include="colors.hpp" />
+    <ClInclude Include="globals.hpp" />
+    <ClInclude Include="items.hpp" />
+    <ClInclude Include="MemoryPatch.hpp" />
+    <ClInclude Include="menu.hpp" />
+    <ClInclude Include="opengl_render.hpp" />
+    <ClInclude Include="hde32.h" />
     <ClInclude Include="opengl.hpp" />
+    <ClInclude Include="ogl_renderer.hpp" />
+    <ClInclude Include="render_base.hpp" />
+    <ClInclude Include="table32.h" />
+    <ClInclude Include="vec3.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
